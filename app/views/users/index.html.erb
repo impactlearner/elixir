@@ -1,0 +1,8 @@
+<h1>Users</h1>
+
+<% @users.each do |user_instance| %>
+    <p>
+        <%= link_to user_instance.name, user_instance %>
+    </p>
+<% end %>
+
