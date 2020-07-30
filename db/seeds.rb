@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Condition.destroy_all
+User.destroy_all
+Remedy.destroy_all
 
 User.create(name: "Eva", age: rand(48))
 User.create(name: "Roz", age: rand(48))
@@ -19,7 +22,15 @@ Remedy.create(name: "Cucumbers", description: "for Puffy Eyes")
 Remedy.create(name: "Sugar", description: "for Hiccups")
 Remedy.create(name: "Apples", description: "for Heartburn")
 
+
+Condition.create(user_id:User.first.id, remedy_id:Remedy.first.id, name: "Eczema", description: "skin condition")
+Condition.create(user_id:User.second.id, remedy_id:Remedy.second.id, name: "Dry Skin", description: "skin condition")
+Condition.create(user_id:User.third.id, remedy_id:Remedy.third.id, name: "Puffy Eyes", description: "facial")
+Condition.create(user_id:User.all[3].id, remedy_id:Remedy.all[3].id, name: "Hiccups", description: "unexplained phenomenon")
+Condition.create(user_id:User.all[4].id, remedy_id:Remedy.all[4].id, name: "Heartburn", description: "indigestion")
+puts "something random"
+
+
+
 eva = User.first
 oatmeal = Remedy.first
-
-Condition.create(user_id: eva.id, remedy_id: oatmeal.id)

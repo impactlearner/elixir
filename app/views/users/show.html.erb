@@ -1,15 +1,25 @@
 <h1>
-    <%= @user.name %>
+    Name: <%= @user.name %>
 </h1>
 
 <h2>
-    <%= @user.age %>
+    Age: <%= @user.age %>
 </h2>
 
 <ul>
     <% @user.remedies.each do |remedy_instance|%>
     <lil>
-    <%= remedy_instance.name %>
+    Remedy: <%= remedy_instance.name %>
+    </li>
+
+    <% end %>
+</ul>
+
+<ul>
+    <% @user.conditions.each do |condition_instance|%>
+    <lil>
+    Condition: <%= condition_instance.name %>
+    remedy: <%= condition_instance.remedy.name %>
     </li>
 
     <% end %>
